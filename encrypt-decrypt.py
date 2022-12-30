@@ -3,6 +3,7 @@ from Crypto.PublicKey import RSA
 from Crypto.Random import get_random_bytes
 from Crypto.Cipher import AES, PKCS1_OAEP
 
+
 # Generate a new RSA key pair
 key = RSA.generate(2048)
 
