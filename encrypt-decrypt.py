@@ -1,8 +1,7 @@
-from Crypto import *
+import sys
 from Crypto.PublicKey import RSA
-from Crypto.Random import get_random_bytes
-from Crypto.Cipher import AES, PKCS1_OAEP
-
+from Crypto.Cipher import PKCS1_OAEP
+# Encrypt and decrypt a file with choose function using RSA
 
 # Generate a new RSA key pair
 key = RSA.generate(2048)
@@ -60,23 +59,26 @@ def decrypt_file(input_file, output_file, private_key):
             # Write the decrypted data to the output file
             fout.write(decrypted_data)
 
-# Test the encryption and decryption functions
-input_file = input('Input your filename: ')
-encrypted_file = input('Input output filename for save the encrypted: ')
-decrypted_file = input('Input output filename for save the decrypted: ')
+def main():
+    # Get the input and output file names
+    input_file = input('Enter the name of the input file: ')
+    output_file = input('Enter the name of the output file: ')
 
+    # Get the user's choice
+    choice = input('Encrypt or decrypt? [1/2]: ')
 
-# Encrypt the input file
-encrypt_file(input_file, encrypted_file, public_key)
-
-
-# Decrypt the encrypted file
-decrypt_file(encrypted_file, decrypted_file, private_key)
-
-
-# Check if the decrypted file is the same as the input file
-with open(input_file, 'rb') as fin, open(decrypted_file, 'rb') as fout:
-    if fin.read() == fout.read():
-        print('Success: The decrypted file is the same as the input file.')
+    # Encrypt the file
+    if choice == '1':
+        encrypt_file(input_file, output_file, public_key)
+    # Decrypt the file
+    elif choice == '2':
+        decrypt_file(input_file, output_file, private_key)
+    # Invalid choice
     else:
-        print('Error: The decrypted file is not the same as the input file.')
+        print('Error: Invalid choice.')
+        sys.exit(1)
+
+
+
+if __name__ == '__main__':
+    main()
