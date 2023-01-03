@@ -3,6 +3,7 @@ from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 # Encrypt and decrypt a file with choose function using RSA
 
+
 # Generate a new RSA key pair
 key = RSA.generate(2048)
 
