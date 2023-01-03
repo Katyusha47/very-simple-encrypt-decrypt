@@ -18,7 +18,7 @@ pip install pycryptodomex
 # Usage
 To run the script, use the following command:
 ```bash
-python __init__.py
+python encrypt-decrypt.py
 ```
 You will be prompted to enter the name of the input file, the name of the output file, and whether you want to encrypt or decrypt the file.
 
