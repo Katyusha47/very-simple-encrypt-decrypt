@@ -16,26 +16,17 @@ pip install pycryptodomex
 ```
 
 # Usage
-To run the script, use the following command:
+* To run the script, use the following command:
 ```bash
 python encrypt-decrypt.py
 ```
-You will be prompted to enter the name of the input file, the name of the output file, and whether you want to encrypt or decrypt the file.
+* When prompted, enter the name of the input file you wish to encrypt.
+* When prompted, enter the name of the output file that will contain the encrypted data.
+* When prompted, enter the name of the file that will contain the decrypted data.
+* The script will encrypt the input file and save the encrypted data to the output file. It will then decrypt the output file and save the decrypted data to the specified file.
+* The script will display success messages upon successful completion of the encryption and decryption processes.
 
-# Example
-```bash
-Enter the name of the input file: input.txt
-Enter the name of the output file: output.txt
-Encrypt or decrypt? [1/2]: 1
-```
-This will encrypt the input.txt file and save the encrypted data to output.txt.
 
-```bash
-Enter the name of the input file: input.txt
-Enter the name of the output file: output.txt
-Encrypt or decrypt? [1/2]: 2
-```
-This will decrypt the input.txt file and save the decrypted data to output.txt
 
 # Notes
 * The RSA key pair is generated using a 2048-bit key length. This key length is considered to be sufficient for most purposes and provides an acceptable level of security.
