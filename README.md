@@ -42,3 +42,8 @@ This will decrypt the input.txt file and save the decrypted data to output.txt
 * The input file is read and processed in 128-byte blocks. This means that the input file is divided into blocks of 128 bytes, and each block is encrypted or decrypted separately.
 * The output file is padded with zeros to a multiple of the block size (256 bytes) during decryption. This is necessary because the RSA algorithm requires that the input data be a multiple of the block size.
 * If the decryption fails for a block of data, an error message is displayed and the script continues to the next block. This can happen if the decryption key is incorrect or if the data has been tampered with.
+
+
+
+# Disclaimer
+This project was made to fulfill the final project of the first semester of the algorithm course. This project was created for educational purposes.
