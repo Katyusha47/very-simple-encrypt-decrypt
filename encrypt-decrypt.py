@@ -11,6 +11,7 @@ key = RSA.generate(2048)
 public_key = key.publickey()
 private_key = key
 
+
 # Function to encrypt a file using RSA
 def encrypt_file(input_file, output_file, public_key):
     # Open the input and output files
@@ -61,24 +62,23 @@ def decrypt_file(input_file, output_file, private_key):
             fout.write(decrypted_data)
 
 def main():
-    # Get the input and output file names
-    input_file = input('Enter the name of the input file: ')
-    output_file = input('Enter the name of the output file: ')
+    try:
+        # Get the input and output file names
+        input_file = input('Enter the name of the input file: ')
+        output_file = input('Enter the name of the output file: ')
+        output_decrypted_file = input('Enter the name of the decrypted file: ')
 
-    # Get the user's choice
-    choice = input('Encrypt or decrypt? [1/2]: ')
-
-    # Encrypt the file
-    if choice == '1':
+        # encrrypt the file
         encrypt_file(input_file, output_file, public_key)
-    # Decrypt the file
-    elif choice == '2':
-        decrypt_file(input_file, output_file, private_key)
-    # Invalid choice
-    else:
-        print('Error: Invalid choice.')
-        sys.exit(1)
+        print('File encrypted successfully.')
 
+        # decrypt the file
+        decrypt_file(output_file, output_decrypted_file, private_key)
+        print('File decrypted successfully.')
+
+    except Exception as e:
+        print('Error: ' + str(e))
+        sys.exit(1)
 
 
 if __name__ == '__main__':
